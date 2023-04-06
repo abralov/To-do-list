@@ -4,6 +4,11 @@ const add = document.querySelector('.addBtn');
 const clear = document.querySelector('.clearBtn');
 const items = document.querySelector('.items');
 
+
+
+input.addEventListener('input', () => {
+    input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+})
 add.addEventListener('click', () => {
     if (input.value.length > 0) {
         const newItemElement = document.createElement('div');
@@ -36,7 +41,7 @@ add.addEventListener('click', () => {
         });
 
         completebtn.addEventListener('click', () => {
-            newItemValueElement.classList.add('completed');
+            newItemValueElement.classList.toggle('completed');
         });
 
         btnContainer.appendChild(editbtn);
